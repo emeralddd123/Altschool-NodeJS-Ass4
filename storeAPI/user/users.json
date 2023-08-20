@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "username": "johnDoe",
+      "password": "hashed_password_1",
+      "role": "user"
+    },
+    {
+      "id": 2,
+      "username": "janeSmith",
+      "password": "hashed_password_2",
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "username": "UsmanAbdulsalam",
+      "password": "hashed_password_3",
+      "role": "admin"
+    },
+    {
+      "id": 4,
+      "username": "aliceJones",
+      "password": "hashed_password_4",
+      "role": "user"
+    },
+    {
+      "id": 5,
+      "username": "DanielAdesoji",
+      "password": "hashed_password_5",
+      "role": "admin"
+    }
+  ]
+  
