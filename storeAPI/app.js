@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const path = require('path')
 
 const productRouter = require('./product/routes')
 const userRouter = require('./user/routes')
@@ -7,7 +8,7 @@ const userRouter = require('./user/routes')
 const app = express()
 const port = 3000
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.json())
 
 
