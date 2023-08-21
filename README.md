@@ -28,7 +28,7 @@
     <h3>Products Endpoints</h3>
     <ul>
       <li>
-        <b>GET \products </b> for retrieving all the available product in the store
+        <b>GET \product </b> for retrieving all the available product in the store
       </li>
       <li><b>GET \product\id</b> for retrieving a single product from store</li>
       <li><b>POST \product</b> for adding product to the store</li>
