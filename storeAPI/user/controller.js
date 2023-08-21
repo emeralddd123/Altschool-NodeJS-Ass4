@@ -66,15 +66,15 @@ const login = function (req, res) {
             console.log('Password no match')
             return res.status(401).json({ error: `Invalid Authentication Credentials` })
         }
-        const loggedIn = apiKeyDb.find((apiObj) => {
-            return apiObj.username === username
+        const loggedIn = apiKeyDb.find((apiKeyObj) => {
+            return apiKeyObj.username === username
         })
         if (loggedIn) {
             return res.status(200).json({ message: `you've already been authenticated`, apikey: loggedIn.apikey })
         } else {
             let apikey = utils.generateKey(username)
-            const apiObj = { username: username, apikey: apikey }
-            apiKeyDb.push(apiObj)
+            const apiKeyObj = { username: username, apikey: apikey }
+            apiKeyDb.push(apiKeyObj)
             updateApiKeyDb()
             res.status(200).json({ message: 'Authentication succesful', apikey: apikey })
         }
@@ -94,8 +94,8 @@ const getMyInfo = function (req, res) {
 const logout = function (req, res) {
     const apikey = req.headers.apikey
     if (apikey) {
-        const apiKeyIndex = apiKeyDb.findIndex((apiObj) => {
-            return apiObj.apikey === apikey
+        const apiKeyIndex = apiKeyDb.findIndex((apiKeyObj) => {
+            return apiKeyObj.apikey === apikey
         })
         console.log(apiKeyIndex)
         if (apiKeyIndex !== -1) {

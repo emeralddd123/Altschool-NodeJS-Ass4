@@ -42,8 +42,8 @@ const authenticate = function (req, res, next) {
         req.user = userWithoutPassword;    //will be useful to check for role
 
     } else if (apikey) {
-        const apiKeyExists = controller.apiKeyDb.find((apiObj) => {
-            return apiObj.apikey === apikey
+        const apiKeyExists = controller.apiKeyDb.find((apiKeyObj) => {
+            return apiKeyObj.apikey === apikey
         })
         if (apiKeyExists) {
             const user = userDb.find((user) => {
