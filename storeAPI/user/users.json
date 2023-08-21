@@ -1,33 +1,37 @@
 [
     {
-      "id": 1,
-      "username": "johnDoe",
-      "password": "hashed_password_1",
-      "role": "user"
+        "username": "johnDoe",
+        "password": "hashed_password_1",
+        "role": "user"
     },
     {
-      "id": 2,
-      "username": "janeSmith",
-      "password": "hashed_password_2",
-      "role": "user"
+        "username": "janeSmith",
+        "password": "hashed_password_2",
+        "role": "user"
     },
     {
-      "id": 3,
-      "username": "UsmanAbdulsalam",
-      "password": "hashed_password_3",
-      "role": "admin"
+        "username": "aliceJones",
+        "password": "hashed_password_4",
+        "role": "user"
     },
     {
-      "id": 4,
-      "username": "aliceJones",
-      "password": "hashed_password_4",
-      "role": "user"
+        "username": "testUser1",
+        "password": "password_1",
+        "role": "user"
     },
     {
-      "id": 5,
-      "username": "DanielAdesoji",
-      "password": "hashed_password_5",
-      "role": "admin"
+        "username": "testUser2",
+        "password": "password_2",
+        "role": "user"
+    },
+    {
+        "username": "testUser3",
+        "password": "password_3",
+        "role": "user"
+    },
+    {
+        "username": "UsmanAbdulsalam",
+        "password": "usmanpassword",
+        "role": "admin"
     }
-  ]
-  
+]
