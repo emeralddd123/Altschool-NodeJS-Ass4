@@ -104,7 +104,7 @@ const logout = (req, res) => {
 
         }
     }
-    res.status(200).json("logout sucesfully!!")
+    res.status(200).json({message:"logout sucesfully!!"})
 }
 
 
