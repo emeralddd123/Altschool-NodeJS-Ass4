@@ -7,7 +7,7 @@ const productDbPath = path.join(__dirname, ".", "products.json")
 const productDb = JSON.parse(fs.readFileSync(productDbPath, "utf-8"))
 
 
-const updateProductDb = function () {
+const updateProductDb = () => {
     fs.writeFile(productDbPath, JSON.stringify(productDb), (err) => {
         if (err) {
             res.status(500).send(err);
@@ -15,11 +15,11 @@ const updateProductDb = function () {
     });
 }
 
-const getAllProduct = function (req, res) {
+const getAllProduct = (req, res) => {
     res.json({ data: productDb })
 }
 
-const getProduct = function (req, res) {
+const getProduct = (req, res) => {
     const id = req.params.id
     const productIndex = productDb.findIndex((product) => {
         return product.id == id
@@ -33,7 +33,7 @@ const getProduct = function (req, res) {
 
 }
 
-const createProduct = function (req, res) {
+const createProduct = (req, res) => {
 
     const newProduct = req.body
     const lastProduct = productDb[productDb.length - 1]
@@ -47,7 +47,7 @@ const createProduct = function (req, res) {
 
 }
 
-const editProduct = function (req, res) {
+const editProduct = (req, res) => {
     const id = req.params.id
     const productIndex = productDb.findIndex((product) => {
         return product.id == id
@@ -65,7 +65,7 @@ const editProduct = function (req, res) {
     }
 }
 
-const deleteProduct = function (req, res) {
+const deleteProduct = (req, res) => {
     const id = req.params.id
     const productIndex = productDb.findIndex((product) => {
         return product.id == id

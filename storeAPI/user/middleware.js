@@ -5,7 +5,7 @@ const userDb = controller.userDb
 
 
 
-const validUserCreation = function (req, res, next) {
+const validUserCreation = (req, res, next) => {
     const { error, value } = utils.userSchema.validate(req.body)
     if (error) {
         return res.status(400).send(error)
@@ -16,7 +16,7 @@ const validUserCreation = function (req, res, next) {
     next()
 }
 
-const authenticate = function (req, res, next) {
+const authenticate = (req, res, next) => {
     let authHeader = req.headers.authorization
     let apikey = req.headers.apikey
     if (authHeader && authHeader.startsWith('Basic ')) {
@@ -63,7 +63,7 @@ const authenticate = function (req, res, next) {
     next()
 }
 
-const isRoleUser = function (req, res, next) {
+const isRoleUser = (req, res, next) => {
     if (req.user.role !== "user") {
         return res.status(403).json({ error: "Only user with Role=user is allowed to perform this action" })
 
@@ -72,7 +72,7 @@ const isRoleUser = function (req, res, next) {
     next()
 }
 
-const isRoleAdmin = function (req, res, next) {
+const isRoleAdmin = (req, res, next) => {
     if (req.user.role !== "admin") {
         return res.status(403).json({ error: "Only admins are allowed to perform this action" })
 

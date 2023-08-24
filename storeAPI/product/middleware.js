@@ -8,7 +8,7 @@ const productSchema = Joi.object({
     quantity: Joi.number().integer().required(),
 })
 
-const validateProduct = function (req, res, next) {
+const validateProduct = (req, res, next) => {
     const {error, value } = productSchema.validate(req.body)
 
     if (error) {

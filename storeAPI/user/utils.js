@@ -5,7 +5,7 @@ const userSchema = Joi.object({
     password: Joi.string().min(3).required()
 })
 
-function generateKey(username) {
+const generateKey = (username) => {
     const firstThreeLetters = username.slice(0, 3).toUpperCase();
     const randomNumber = Math.floor(100000 + Math.random() * 900000);
   

@@ -10,7 +10,7 @@ const apiKeyDbPath = path.join(__dirname, ".", "apikeys.json")
 const apiKeyDb = JSON.parse(fs.readFileSync(apiKeyDbPath, "utf-8"))
 
 
-const updateuserDb = function () {
+const updateuserDb = () => {
     fs.writeFile(userDbPath, JSON.stringify(userDb), (err) => {
         if (err) {
             res.status(500).send(err);
@@ -18,7 +18,7 @@ const updateuserDb = function () {
     });
 }
 
-const updateApiKeyDb = function () {
+const updateApiKeyDb = () => {
     fs.writeFile(apiKeyDbPath, JSON.stringify(apiKeyDb), (err) => {
         if (err) {
             res.status(500).send(err);
@@ -27,7 +27,7 @@ const updateApiKeyDb = function () {
 }
 
 
-const signUp = function (req, res) {
+const signUp = (req, res) => {
     const user = req.body
     const userExist = userDb.find((user) => {
         return user.username === user.username
@@ -46,7 +46,7 @@ const signUp = function (req, res) {
     res.status(201).json('User created!')
 }
 
-const login = function (req, res) {
+const login = (req, res) => {
     const { error, value } = utils.userSchema.validate(req.body)
     if (error) {
         return res.status(400).json(error)
@@ -83,15 +83,15 @@ const login = function (req, res) {
     }
 }
 
-const getAllUser = function (req, res) {
+const getAllUser = (req, res) => {
     res.json(userDb)
 }
 
-const getMyInfo = function (req, res) {
+const getMyInfo = (req, res) => {
     res.status(200).json({ data: req.user })
 }
 
-const logout = function (req, res) {
+const logout = (req, res) => {
     const apikey = req.headers.apikey
     if (apikey) {
         const apiKeyIndex = apiKeyDb.findIndex((apiKeyObj) => {
